@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('catalogos', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->unsignedBigInteger('idAdm')->unsigned();
+            $table->foreign('idAdm')->references('id')->on('adms');
+            $table->string('valor');
+            $table->string('quantidade');
+            $table->string('material');
+            $table->string('peso');
+            $table->string('tamanho');
             $table->timestamps();
         });
     }
