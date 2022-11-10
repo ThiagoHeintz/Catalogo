@@ -34,6 +34,9 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark bg-white" href="{{ url('catalogos') }}">Lista</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark bg-white" href="{{ url('adms') }}">Administradores</a>
+                            </li>
                         @endif 
                     </ul>
 

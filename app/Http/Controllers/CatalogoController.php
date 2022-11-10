@@ -148,7 +148,7 @@ class CatalogoController extends Controller
             $catalogo->tamanho = $request->input('tamanho');
             if($catalogo->save()) {
                 Session::flash('mensagem','Produto alterado com sucesso');
-                return redirect()->back();
+                return redirect('catalogos');
             }
         } else {
             return redirect('login');

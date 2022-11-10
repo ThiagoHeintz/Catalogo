@@ -21,6 +21,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('catalogos/buscar',[CatalogoController::class,'buscar']);
 Route::resource('catalogos',CatalogoController::class);
 
+Route::get('adms/buscar',[AdmController::class,'buscar']);
+Route::resource('adms',AdmController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

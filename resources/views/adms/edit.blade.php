@@ -1,0 +1,29 @@
+@extends('layouts.app')
+@section('title','Editar Adm')
+@section('content')
+<br>
+    <h1>Alteração de Administrador</h1>
+@if(Session::has('mensagem'))
+    <div class="alert alert-success">
+        {{Session::get('mensagem')}}
+    </div>    
+@endif
+<br>
+{{Form::open(['route' => ['adms.update', $adm->id], 'method' => 'PUT','enctype'=>'multipart/form-data'])}}
+
+{{Form::label('nome', 'Nome')}}
+{{Form::text('nome',$adm->nome, ['class'=>'form-control', 'required', 'placeholder' =>'Nome'])}}
+
+{{Form::label('telefone', 'Telefone')}}
+{{Form::text('telefone',$adm->telefone, ['class'=>'form-control', 'required', 'placeholder' =>'Telefone'])}}
+
+{{Form::label('email', 'E-Mail')}}
+{{Form::text('email',$adm->email, ['class'=>'form-control', 'required', 'placeholder' =>'E-Mail'])}}
+
+{{Form::label('foto', 'Foto')}}
+{{Form::file('foto',['class'=>'form-control','id'=>'foto'])}}
+<br>
+{{Form::submit('Salvar', ['class'=>'btn btn-success'])}}
+{!!Form::button('Cancelar', ['onclick'=>'javascript:history.go(-1)','class'=> 'btn btn-danger'])!!}
+{{Form::close()}}
+@endsection
